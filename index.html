@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Money Wallet</title>
+</head>
+
+
+<body>
+  <h1>
+    Money Wallet
+  </h1>
+  <input id="amountInput" placeholder="Enter your amount...">
+  <button 
+    id="EnterButton">Enter
+  </button>
+  <script>
+      var EnterButton = document.getElementById("EnterButton");
+      //click do this function
+      EnterButton.addEventListener("click", function() {
+        var amount = document.getElementById("amountInput").value;
+        /* My note
+        -window.open is to open new brower window or tab
+        -newWindow.html ko open chin tl.
+        -? ka indicated the start of the query parameters 
+        encodeURIComponent ka value ko pass lote ml so lo at tl .encode the variable to ensure that it's properly formatted for a URL
+        -blank ka the new URl should be opened in a new browser window or tab
+        */
+        var newWindow = window.open("newWindow.html?amount=" + encodeURIComponent(amount), "_blank");
+      
+    }); 
+
+    document.addEventListener("DOMContentLoaded", function() {
+      // Change the background color of the entire window
+      document.body.style.backgroundColor = "#E8E9C9"; 
+    });
+  </script>
+</body>
+</html>

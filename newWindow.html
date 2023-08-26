@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>50-30-20 Budgeting Rule</title>
+  <style>
+     p {
+      font-size: 18px;
+      margin-bottom: 10px;
+      padding: 10px;
+      border: 1px solid #3E3E3C;
+      background-color: #85BB65;
+      border-radius: 5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction:column;
+      font-family:Verdana, Geneva, Tahoma, sans-serif;
+      color: #E8E9C9; 
+    }
+    /* #needs {
+      color: #e74c3c;
+    }
+
+    #wants {
+      color: #3498db;
+    }
+
+    #savings {
+      color: #2ecc71;
+    } */
+  </style>
+</head>
+<body>
+  <p id="needs"></p>
+  <p id="wants"></p>
+  <p id="savings"></p>
+  <!-- <input id="needs" placeholder="Needs(50%)...">
+  <button id="needsButton">Enter</button>
+  <input id="wants" placeholder="Wants(30%)...">
+  <button id="wantsButton">Enter</button>
+  <input id="savings" placeholder="Saving(20%)...">
+  <button id="savingsButton">Enter</button> -->
+  <script>
+
+    /*
+    .search ka amount 
+    URLSearchParams ka provides methods for working with query parameters.
+    */
+    var amountInput = new URLSearchParams(window.location.search);
+    var enteredAmount = amountInput.get("amount");
+    console.log(enteredAmount);
+
+    var storeNeeds = enteredAmount * 0.5;
+    var storeWants = enteredAmount * 0.3;
+    var storeSavings = enteredAmount * 0.2;
+    console.log(storeNeeds);
+    console.log(storeWants);
+    console.log(storeSavings);
+
+    var pickNeeds = document.getElementById("needs");
+    pickNeeds.textContent = "This is the 50% of your needs: " + storeNeeds;
+
+    var pickWants = document.getElementById("wants");
+    pickWants.textContent = "This is the 30% of your wants: " + storeWants;
+
+    var pickSaving = document.getElementById("savings");
+    pickSaving.textContent = "This is the 20% of your needs: " + storeSavings;
+
+    // var pickNeeds = document.getElementById("needsButton");
+    // pickNeeds.addEventListener("click",function(){
+    //   var needs = document.getElementById("needs").value;
+
+
+    // });
+
+    
+    
+    // var pickWants = document.getElementById("wantsButton");
+    // pickWants.addEventListener("click",function(){
+    //   var wants = document.getElementById("wants").value;
+
+
+    // });
+
+    // var pickSaving = document.getElementById("savingsButton");
+    
+    // pickSaving.addEventListener("click",function(){
+    //   var savings = document.getElementById("savings").value;
+
+
+    // });
+    document.addEventListener("DOMContentLoaded", function() {
+      // Change the background color of the entire window
+      document.body.style.backgroundColor = "#228D57"; 
+    });
+    
+  </script>
+</body>
+</html>
